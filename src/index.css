@@ -1,0 +1,15 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: #1E1E1E;
+  color: antiquewhite;
+  font-family: "Montserrat", serif;
+  font-size: .9rem;
+}
+
+.montserrat-400 {
+  font-family: "Montserrat", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}

@@ -1,0 +1,123 @@
+
+.navbar {
+    width: 100%;
+    height: 45px;
+    background-color: #1c1d1d;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.product {
+    width: 100%;
+    height: 90vh;
+    /* border-bottom: 1px solid #e9ecef; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image_container {
+    width: 20%;
+    height: 50%;
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid salmon; */
+}
+
+.image_container > img {
+    width: 100%;
+}
+
+.product_info {
+    width: 50%;
+    height: 80%;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid rgb(155, 114, 250); */
+}
+
+.image_container > img {
+  width: 100%;
+}
+
+.product_info {
+  width: 50%;
+  height: 80%;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(155, 114, 250);
+
+}
+
+.product_info1 {
+  width: 100%;
+  height: 10%;
+  /* background-color: cornflowerblue; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product_info2 {
+width: 100%;
+height: 50%;
+/* background-color: rgb(237, 100, 168); */
+}
+
+.product_info3 {
+width: 100%;
+height: 10%;
+/* background-color: rgb(175, 237, 100); */
+}
+
+.product_info4 {
+width: 100%;
+height: 30%;
+/* background-color: cornflowerblue; */
+}
+
+/* Fill button styling */
+.fill_1, .fill_2 {
+    font-size: 1rem;
+    letter-spacing: 1px;
+    padding: 10px 20px;
+    margin: 10px;
+    outline: 0;
+    border: 1px solid #ffffff;
+    cursor: pointer;
+    position: relative;
+    background-color: rgba(253, 253, 253, 0);
+  }
+  
+  .fill_1::after {
+    content: "";
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 7px;
+    left: 7px;
+    transition: 0.2s;
+    background-color: #03dac5;
+  }
+  .fill_2::after {
+    content: "";
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 7px;
+    left: 7px;
+    transition: 0.2s;
+    background-color: #cf6679;
+  }
+  .fill_1:hover::after, .fill_2:hover::after {
+    top: 0px;
+    left: 0px;
+  }
+
+
