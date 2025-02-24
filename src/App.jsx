@@ -19,6 +19,7 @@ function App() {
     setSelectedCategory(category);
     console.log("Selected category:", category);
   };
+  
   const addToCart = (product) => {
     const existingProduct = cart.find((item) => item.id === product.id);
     if (existingProduct) {
@@ -37,7 +38,7 @@ function App() {
   return (
     <AppProvider>
       <BrowserRouter>
-        <Navbar />
+        <Navbar onSelectCategory={handleCategorySelect}/>
         <Routes>
           <Route path="/" element={ <Home addToCart={addToCart} selectedCategory={selectedCategory} /> } />
           <Route path="/add_product" element={ <AddProduct />} />

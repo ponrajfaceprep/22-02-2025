@@ -4,6 +4,8 @@ import { useContext } from "react";
 import AppContext from "../Context/Context";
 import axios from "../axios";
 
+import "./Product.css";
+
 const Product = () => {
     const { id } = useParams();
   const { data, addToCart, removeFromCart, cart, refreshData } = useContext(AppContext);
@@ -67,7 +69,7 @@ const Product = () => {
                         </div>
                         <div className="product_info">
                             <div className="product_info1">
-                                <p>{product.category}</p>
+                                <p className="color-blue">{product.category}</p>
                                 <p>Listed <span> <i> {new Date(product.releaseDate).toLocaleDateString()}</i></span></p>
                             </div>
                             <div className="product_info2">
@@ -79,9 +81,11 @@ const Product = () => {
                                 <p>Price : <span>{product.price}</span></p>
                             </div>
                             <div className="product_info4">
-                                <p>Stock Available : </p>
-                                <button type="button" class="fill_1"  onClick={handleEditClick}>Edit</button>
-                                <button type="button" class="fill_2" onClick={deleteProduct}>Delete</button>
+                            <p className={product.quantity > 0 ? "color-green" : "color-red"}>
+                              Stock Available: <span>{product.quantity}</span>
+                            </p>
+                                <button type="button" class="btn-green"  onClick={handleEditClick}>Edit</button>
+                                <button type="button" class="btn-red" onClick={deleteProduct}>Delete</button>
                             </div>
                         </div>
                     </div>

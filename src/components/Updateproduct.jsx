@@ -14,8 +14,8 @@ const UpdateProduct = () => {
         price: "",
         category: "",
         releaseDate: "",
-        productAvailable: false,
-        stockQuantity: "",
+        productAvailable: true,
+        quantity: "",
     });
       
     const handleImageChange = (e) => {
@@ -46,6 +46,8 @@ const UpdateProduct = () => {
             const imageFile = await converUrlToFile(responseImage.data,response.data.imageName)
             setImage(imageFile);     
             setUpdateProduct(response.data);
+
+            console.log(response.data);
           } 
           catch (error) {
             console.error("Error fetching product:", error);
@@ -87,12 +89,12 @@ const UpdateProduct = () => {
             console.log("product unsuccessfull update",updateProduct)
             alert("Failed to update product. Please try again.");
           });
+          console.log(updateProduct)
       };
-
-      console.log(updateProduct)
 
       return (
         <div className="add-product container">
+          
             <table style={{fontSize:".8rem"}}>
                 <tbody>
                 <tr>
@@ -161,9 +163,9 @@ const UpdateProduct = () => {
                             type="number" 
                             // placeholder="stock Quantity" 
                             onChange={handleInputChange} 
-                            value={product.stockQuantity}
-                            name="stockQuantity"
-                            id="stockQuantity"/>
+                            value={product.quantity}
+                            name="quantity"
+                            id="quantity"/>
                     </td>
                     <td>
                         <label>Release Date</label><br/>
@@ -181,17 +183,17 @@ const UpdateProduct = () => {
                     <td>
                         <input
                         type="checkbox"
-                        name="productAvailable"
-                        checked={!product.productAvailable}
+                        name="available"
+                        checked={product.available}
                         onChange={(e) => {
                             console.log(e.target.checked)
-                            setProduct({ ...product, productAvailable: e.target.checked })
-                            console.log(product.productAvailable)
+                            setProduct({ ...product, available: e.target.checked })
+                            console.log(product.available)
                             }
                         }
                         onClick={handleInputChange}
                         />
-                        <label className="form-check-label">Product Available</label>
+                        <label>Product Available</label>
                     </td>
                     <td>
                         <label>Upload Product Image</label>

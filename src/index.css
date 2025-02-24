@@ -1,8 +1,11 @@
 body {
   margin: 0px;
   padding: 0px;
-  background-color: #1E1E1E;
-  color: rgb(255, 255, 255);
+  background-color: #1a191b;
+  color: #FFFFFF;
+
+  /* background-color: #ffffff;
+  color: #111111; */
   font-family: "Montserrat", serif;
   font-size: .9rem;
 }

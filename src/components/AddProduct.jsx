@@ -9,7 +9,7 @@ const AddProduct = () => {
         description: "",
         price: "",
         category: "",
-        stockQuantity: "",
+        quantity: "",
         releaseDate: "",
         productAvailable: true,
       });
@@ -23,7 +23,6 @@ const AddProduct = () => {
 
       const handleImageChange = (e) => {
         setImage(e.target.files[0]);
-        // setProduct({...product, image: e.target.files[0]})
       };
 
       const submitHandler = (event) => {
@@ -121,9 +120,8 @@ const AddProduct = () => {
                             type="number" 
                             // placeholder="stock Quantity" 
                             onChange={handleInputChange} 
-                            // value={product.stockQuantity}
-                            name="stockQuantity"
-                            id="stockQuantity"/>
+                            name="quantity"
+                            id="quantity"/>
                     </td>
                     <td>
                         <label>Release Date</label><br/>
@@ -141,17 +139,17 @@ const AddProduct = () => {
                     <td>
                         <input
                         type="checkbox"
-                        name="productAvailable"
-                        checked={!product.productAvailable}
+                        name="available"
+                        checked={product.available}
                         onChange={(e) => {
                             console.log(e.target.checked)
-                            setProduct({ ...product, productAvailable: e.target.checked })
-                            console.log(product.productAvailable)
+                            setProduct({ ...product, available: e.target.checked })
+                            console.log(product.available)
                             }
                         }
                         onClick={handleInputChange}
                         />
-                        <label className="form-check-label">Product Available</label>
+                        <label>Product Available</label>
                     </td>
                     <td>
                         <label>Upload Product Image</label>
